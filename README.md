@@ -60,27 +60,170 @@ This document provides detailed information about the variables in the `Clean_df
 | Owner_occupied_P         | Percentage of population in owner-occupied housing units                                         | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
 
 
-This document provides detailed information about the variables in the `df_EPA_TBD.csv` dataset, including their names, descriptions, data source, scale and missing values. There are all from block-level dataset (EPA Smart Location) and contains **83** unique tract id finally.
+This document provides detailed information about the variables in the `df_EPA_TBD.csv` dataset, including their names, descriptions, data sources, scales, and missing values. These variables are derived from block-level datasets (EPA Smart Location) and include **83** unique tract IDs.
 
-Ac_Total	Total geometric area (acres) of the CBG	Sum from block level	224-21000	0
-Ac_Water	Total water area (acres)	Sum from block level	0-1882	0
-Ac_Land	Total land area (acres)	Sum from block level	224-21000	0
-Ac_Unpr	Total land area (acres) that is not protected from development (i.e., not a park, natural area or conservation area)	Sum from block level	224-19400	0
-D1A	Gross residential density (HU/acre) on unprotected land	Sum from block level	0-28	0
-D1B	Gross population density (people/acre) on unprotected land	Sum from block level	0-79	0
-D1C	Gross employment density (jobs/acre) on unprotected land	Sum from block level	0-22	0
-D1D	Gross activity density (employment + Hus) on unprotected land	Sum from block level	0-44	0
-D2A_JPHH	Jobs per household	Average from block level	0-9	0
-D3A	Total road network density	Sum from block level	2-105	0
-D3B	Street intersection density (weighted, auto-oriented intersections eliminated)	Sum from block level	2-397	0
-D4A	Distance from the population-weighted centroid to nearest transit stop (meters)	Average from block level	84-1136	34
-D4C	Aggregate frequency of transit service within 0.25 miles of CBG boundary per hour during evening peak period	Average from block level	0-18	15
-D4D	Aggregate frequency of transit service [D4C] per square mile	Average from block level	0-51	15
-D4E	Aggregate frequency of transit service [D4C] per capita	Average from block level	0.0001-0.007	15
-NatWalkInd	Walkability Index	Average from block level	4-17;	0
+| **Variable Name** | **Description**                                                                                     | **Data Source**            | **Scale**         | **Missing Values** |
+|-------------------|-----------------------------------------------------------------------------------------------------|----------------------------|-------------------|---------------------|
+| Ac_Total          | Total geometric area (acres) of the CBG                                                            | Sum from block level (EPA Smart Location) | 224-21000       | 0                   |
+| Ac_Water          | Total water area (acres)                                                                           | Sum from block level (EPA Smart Location) | 0-1882          | 0                   |
+| Ac_Land           | Total land area (acres)                                                                            | Sum from block level (EPA Smart Location) | 224-21000       | 0                   |
+| Ac_Unpr           | Total land area (acres) not protected from development (e.g., parks, natural areas)                | Sum from block level (EPA Smart Location) | 224-19400       | 0                   |
+| D1A               | Gross residential density (housing units/acre) on unprotected land                                 | Sum from block level (EPA Smart Location) | 0-28            | 0                   |
+| D1B               | Gross population density (people/acre) on unprotected land                                         | Sum from block level (EPA Smart Location) | 0-79            | 0                   |
+| D1C               | Gross employment density (jobs/acre) on unprotected land                                           | Sum from block level (EPA Smart Location) | 0-22            | 0                   |
+| D1D               | Gross activity density (employment + housing units/acre) on unprotected land                       | Sum from block level (EPA Smart Location) | 0-44            | 0                   |
+| D2A_JPHH          | Jobs per household                                                                                 | Average from block level (EPA Smart Location) | 0-9         | 0                   |
+| D3A               | Total road network density                                                                         | Sum from block level (EPA Smart Location) | 2-105           | 0                   |
+| D3B               | Street intersection density (weighted, excluding auto-oriented intersections)                      | Sum from block level (EPA Smart Location) | 2-397           | 0                   |
+| D4A               | Distance from population-weighted centroid to nearest transit stop (meters)                        | Average from block level (EPA Smart Location) | 84-1136      | 34                  |
+| D4C               | Aggregate frequency of transit service within 0.25 miles of CBG boundary per hour during peak time | Average from block level (EPA Smart Location) | 0-18         | 15                  |
+| D4D               | Aggregate frequency of transit service per square mile                                             | Average from block level (EPA Smart Location) | 0-51         | 15                  |
+| D4E               | Aggregate frequency of transit service per capita                                                  | Average from block level (EPA Smart Location) | 0.0001-0.007  | 15                  |
+| NatWalkInd        | Walkability Index                                                                                  | Average from block level (EPA Smart Location) | 4-17          | 0                   |
+
 
 ## Data Transformation Methods
 
-1) PEOPCOLORPCT
+1. **E_UNINSUR_P**
 
+   The SVI dataset contains two variables: `E_UNINSUR` (total number of uninsured individuals) and `E_TOTPOP` (total civilian noninstitutionalized population). To calculate the percentage of uninsured individuals, the formula **E_UNINSUR / E_TOTPOP** is applied.
 
+2. **E_HBURD_P**
+
+   The SVI dataset contains two variables: `E_HBURD` (housing cost-burdened occupied housing units with annual income less than $75,000) and `E_HH` (total number of households). The percentage of housing cost-burdened units is calculated using the formula **E_HBURD / E_HH**.
+
+3. **E_SNGPNT_P**
+
+   To calculate the percentage of single-parent households with children under 18, the formula **E_SNGPNT / E_HH** is used. Here, `E_SNGPNT` represents the number of single-parent households, and `E_HH` is the total number of households.
+
+4. **E_MUNIT_P**
+
+   The percentage of housing in structures with 10 or more units is derived using **E_MUNIT / E_HU**, where `E_MUNIT` represents the number of multi-unit housing structures, and `E_HU` is the total number of housing units.
+
+5. **E_MOBILE_P**
+
+   To compute the percentage of mobile homes, the formula **E_MOBILE / E_HU** is applied. Here, `E_MOBILE` is the number of mobile homes, and `E_HU` is the total number of housing units.
+
+6. **E_CROWD_P**
+
+   The percentage of overcrowded households is calculated as **E_CROWD / E_HH**, where `E_CROWD` represents households with more people than rooms, and `E_HH` is the total number of households.
+
+7. **E_NOVEH_P**
+
+   The percentage of households without vehicle availability is determined using **E_NOVEH / E_HH**, where `E_NOVEH` is the number of households without vehicles, and `E_HH` is the total number of households.
+
+8. **E_GROUPQ_P**
+
+   The percentage of individuals living in group quarters is computed as **E_GROUPQ / E_TOTPOP**, where `E_GROUPQ` represents the number of individuals in group quarters, and `E_TOTPOP` is the total population.
+
+9. **With_Medicaid_P**
+
+   The percentage of individuals covered by Medicaid is calculated as **Medicaid / Total Population**, using data from ACS datasets.
+
+10. **Work_Drivealone_P**
+
+    The percentage of individuals driving alone to work is derived as **Drive Alone / Total Workers**, using data from ACS "Mode of Transportation to Work".
+
+11. **Work_Carpooled_P**
+
+    The percentage of individuals carpooling to work is computed as **Carpooled / Total Workers**, using data from ACS "Mode of Transportation to Work".
+
+12. **Work_PublicTransportation_P**
+
+    To determine the percentage of individuals taking public transportation to work, the formula **Public Transportation / Total Workers** is used, sourced from ACS datasets.
+
+13. **Work_Walk_P**
+
+    The percentage of individuals walking to work is derived as **Walk / Total Workers**, sourced from ACS "Mode of Transportation to Work".
+
+14. **Work_Taximotorbike_P**
+
+    The percentage of individuals using taxi, motorbike, or bicycle to work is calculated as **Taxi, Motorbike, or Bicycle / Total Workers**, using ACS datasets.
+
+15. **Work_Fromhome_P**
+
+    The percentage of individuals working from home is computed as **Work from Home / Total Workers**, sourced from ACS datasets.
+
+16. **With_PublicAssIncome_P**
+
+    The percentage of individuals receiving public assistance or SNAP benefits is derived as **Public Assistance Income / Total Population**, sourced from ACS "SNAP".
+
+17. **With_SSI_P**
+
+    The percentage of individuals receiving Supplemental Security Income (SSI) is calculated as **SSI / Total Population**, using data from ACS datasets.
+
+18. **Mean_Transportation_time(min)**
+
+    The average commute time is calculated using the mean values for each time period band in ACS "Travel Time to Work". For example, a band of 20-24 minutes is approximated as **(20 + 24) / 2 = 22.5** minutes. For the maximum band (>90 minutes), a value of 100 is used for estimation.
+
+19. **Mean_Proportion_HHIncome**
+
+    The average proportion of household income spent on housing costs is derived by calculating the midpoint for each percentage band in ACS "Housing Costs". For example, a band of 10-14.9% is approximated as **(10 + 14.9) / 2 = 12.45%**. For the highest band (>50%), 60% is used for estimation.
+
+20. **Owner_occupied_P**
+
+    The percentage of housing units that are owner-occupied is calculated as **Owner-Occupied / Total Housing Units**, sourced from ACS "B25008".
+
+21. **Ac_Total**
+
+    The total geometric area of the CBG is obtained by summing block-level data.
+
+22. **Ac_Water**
+
+    The total water area of the CBG is calculated by summing block-level data.
+
+23. **Ac_Land**
+
+    The total land area of the CBG is computed by summing block-level data.
+
+24. **Ac_Unpr**
+
+    The total land area of the CBG not protected from development is determined by summing block-level data.
+
+25. **D1A**
+
+    Gross residential density (housing units per acre) on unprotected land is calculated by summing block-level data.
+
+26. **D1B**
+
+    Gross population density (people per acre) on unprotected land is calculated by summing block-level data.
+
+27. **D1C**
+
+    Gross employment density (jobs per acre) on unprotected land is calculated by summing block-level data.
+
+28. **D1D**
+
+    Gross activity density (employment plus housing units per acre) on unprotected land is calculated by summing block-level data.
+
+29. **D2A_JPHH**
+
+    Jobs per household is calculated as the average from block-level data.
+
+30. **D3A**
+
+    Total road network density is computed by summing block-level data.
+
+31. **D3B**
+
+    Street intersection density (weighted, excluding auto-oriented intersections) is calculated by summing block-level data.
+
+32. **D4A**
+
+    The distance from the population-weighted centroid to the nearest transit stop is averaged from block-level data.
+
+33. **D4C**
+
+    Aggregate frequency of transit service within 0.25 miles of the CBG boundary per hour during peak time is averaged from block-level data.
+
+34. **D4D**
+
+    Aggregate frequency of transit service per square mile is averaged from block-level data.
+
+35. **D4E**
+
+    Aggregate frequency of transit service per capita is averaged from block-level data.
+
+36. **NatWalkInd**
+
+    Walkability Index is calculated as the average from block-level data.
