@@ -5,7 +5,7 @@ We use external data sources, including [EJScreen](https://www.epa.gov/ejscreen/
 
 ## Data Dictionary
 
-This document provides detailed information about the variables in the `Clean_df_safetyindex.csv` dataset, including their names, descriptions, data sources, scales, and missing values. The dataset includes **93** unique tract IDs.
+This document provides detailed information about the variables in the `Final_df_NSI.csv` dataset, including their names, descriptions, data sources, scales, and missing values. The dataset includes **93** unique tract IDs.
 
 | Variable Name   | Description                          | Data Source  | Scale | Missing Values |
 |----------------|----------------------------------|-------------|-------------|-------------|
@@ -58,6 +58,65 @@ This document provides detailed information about the variables in the `Clean_df
 | Mean_Transportation_time(min) | Average time to commute to work (in minutes)                                               | ACS                      | 0-100 (max: 100)  | 1 (tract 9801)      |
 | Mean_Proportion_HHIncome | Average proportion of household income spent on housing costs                                    | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
 | Owner_occupied_P         | Percentage of population in owner-occupied housing units                                         | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
+| EMS_Calls        | Number of EMS Calls from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Fire_Calls        | Number of Fire Calls from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Structure_Fires     | Number of Calls about Structure Fire from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Stroke_Calls        | Number of Calls about Strokes from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Cardiac_Calls        | Number of Calls about Cardiac Illnesses from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Diabetic_Calls        | Number of Calls about Diabetes from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| CPR_Calls        | Number of Calls about CPR (cardiopulmonary resuscitation) from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Shootings        | Number of Calls about Shootings from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Stabbings        | Number of Calls about Stabbings from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Opioid_Calls        | Number of Calls about Opioid from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Auto_Accidents        | Number of Calls about Auto Accidents from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Total_Calls        | Number of total Calls from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
+| Percent_Fatal_Injury        | Percentage of Fatal Injury Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Severe_Injury        | Percentage of Severe Injury Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Visible_Injury        | Percentage of Visible Injury Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Nonvisible_Injury        | Percentage of Nonvisible Injury Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Avg_Kill_Person        | Average Number of Killed Person by Crash Number Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Avg_Kill_Pedestrian        | Average Number of Killed Pedestrian by Crash Number from 2021 to 2024                                        | VDOT                      |        |     |
+| Avg_Injured_Person        | Average Number of Injured Person by Crash Number Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Avg_Injured_Pedestrian        | Average Number of Injured Pedestrian by Crash Number Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Workzone_Related        | Percentage of Work Zone-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Schoolzone_Related        | Percentage of School Zone-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Alcohol_Related        | Percentage of Alcohol-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Animal_Related        | Percentage of Animal-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Unrestrained_Related        | Percentage of Unrestrained-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Bike_Related        | Percentage of Bike-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Distracted_Related        | Percentage of Distracted-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Drowsy_Related        | Percentage of Drowsy-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Drug_Related        | Percentage of Drug-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Guardrail_Related        | Percentage of Guardrail-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Hitrun_Related        | Percentage of Hitrun-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Lgtruck_Related        | Percentage of Large Truck-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Motorcycle_Related        | Percentage of Motorcycle-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Pedestrian_Related        | Percentage of Pedestrian-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Speed_Related        | Percentage of Speed-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Senior_Related        | Percentage of Senior People-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Young_Related        | Percentage of Young People-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Mainline_Related        | Percentage of Main Line-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Night_Related        | Percentage of Night-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Percent_Urban_Crash        | Percentage of Urban Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
+| Total_Population        | Total Population                        | ACS                      |        |     |
+| Median_Age        | Median Age                        | ACS                      |        |     |
+| Sex_Ratio(males per 100 females)        | Sex Ratio(males per 100 females)                        | ACS                      |        |     |
+| Age_Dependency_Ratio        | Age Dependency Ratio                        | ACS                      |        |     |
+| Old-age_Dependency_Ratio        | Old-age Dependency Ratio                        | ACS                      |        |     |
+| Child_Dependency_Ratio        | Child Dependency Ratio                        | ACS                      |        |     |
+| Num_School        | Number of Schools                        | Virginia Open Data Portal                      |        |     |
+| Num_Fire_Station        | Number of Fire Stations                  | Virginia Open Data Portal                        |        |     |
+| Num_Library        | Number of Libraries                        | Virginia Open Data Portal                      |        |     |
+| Num_Hospital        | Number of Hospitals                        | Virginia Open Data Portal                      |        |     |
+| Num_Worship        | Number of Places of Worship                        | Virginia Open Data Portal                      |        |     |
+| Num_Shopping_Center        | Number of Shopping Centers                        | Virginia Open Data Portal                      |        |     |
+| Prop_Hisp        | Proportion of Hispanic or Latino                        | ACS                      |        |     |
+| Prop_White        | Proportion of White Alone                        | ACS                      |        |     |
+| Prop_Black        | Proportion of Black or African American alone                        | ACS                      |        |     |
+| Prop_American_Native        | Proportion of American Indian and Alaska Native alone                       | ACS                      |        |     |
+| Prop_Asian        | Proportion of Asian alone                       | ACS                      |        |     |
+| Prop_Hawaiian        | Proportion of Native Hawaiian and Other Pacific Islander alone                      | ACS                      |        |     |
+| Prop_Onemorerace        | Proportion of People with More than One Race                        | ACS                      |        |     |
 
 
 This document provides detailed information about the variables in the `df_EPA_TBD.csv` dataset, including their names, descriptions, data sources, scales, and missing values. These variables are derived from block-level datasets (EPA Smart Location) and include **83** unique tract IDs.
