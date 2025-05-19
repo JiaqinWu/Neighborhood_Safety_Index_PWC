@@ -5,140 +5,103 @@ We use external data sources, including [EJScreen](https://www.epa.gov/ejscreen/
 
 ## Data Dictionary
 
-This document provides detailed information about the variables in the `Final_df_NSI.csv` dataset, including their names, descriptions, data sources, scales, and missing values. The dataset includes **93** unique tract IDs.
+This document provides detailed information about the variables in the `NSI_0424.csv` dataset, including their names, descriptions, data sources, scales, and missing values. The dataset includes **92** unique Census tract IDs. We excluded 9801 since there are no residences in that tract.
 
-| Variable Name   | Description                          | Data Source  | Scale | Missing Values |
-|----------------|----------------------------------|-------------|-------------|-------------|
-| ID            | Tract ID for different tracts in PWC | Common key ID | 93 individual IDs | 0 |
-| PEOPCOLORPCT  | Percentage of people of color      | EJScreen | 0-1, 1:100% | 0 |
-| LOWINCPCT     | Percentage of low-income population | EJScreen | 0-1, 1:100% | 0 |
-| UNEMPPCT      | Percentage of unemployed individuals | EJScreen | 0-1, 1:100% | 0 |
-| DISABILITYPCT | Percentage of persons with disabilities | EJScreen | 0-1, 1:100% | 0 |
-| LINGISOPCT    | Percentage of persons in limited English-speaking households | EJScreen | 0-1, 1:100% | 0 |
-| LESSHSPCT     | Percentage of population with less than a high school education | EJScreen | 0-1, 1:100% | 0 |
-| UNDER5PCT     | Percentage of population under age 5 | EJScreen | 0-1, 1:100% | 0 |
-| OVER64PCT     | Percentage of population over age 64 | EJScreen | 0-1, 1:100% | 0 |
-| LIFEEXPPCT    | Percentage of low life expectancy | EJScreen | 0-1, 1:100% | 16 |
-| PRE1960PCT    | Percentage of housing units built before 1960 | EJScreen | 0-1, 1:100% | 0 |
-| PM25          | Particulate Matter 2.5 | EJScreen | 6.94-7.34 | 0 |
-| OZONE         | Ozone levels | EJScreen | 53.01-56.03 | 0 |
-| DSLPM         | Diesel particulate matter | EJScreen | 0.09-0.25 | 0 |
-| RSEI_AIR      | Toxic releases to air | EJScreen | 4.43-614 | 0 |
-| PTRAF         | Traffic proximity | EJScreen | 10000-100000 | 0 |
-| PTSDF         | Hazardous waste proximity | EJScreen | 0-1.76 | 0 |
-| UST           | Underground storage tanks | EJScreen | 0-7.35 | 0 |
-| PWDIS         | Wastewater discharge | EJScreen | 22-27419 | 0 |
-| NO2           | Nitrogen Dioxide (NO2) levels | EJScreen | 2.25-8.39 | 0 |
-| DWATER        | Drinking water non-compliance | EJScreen | All the same, 0 | 3 |
-| PNPL          | Superfund site proximity | EJScreen | 0-11.2 | 0 |
-| PRMP          | RMP facility proximity | EJScreen | 0-1.21 | 0 |
-| E_TOTPOP                 | Population estimate (2018-2022)                                                                | SVI                      | 0-9046            | 0                   |
-| E_HU                     | Housing unit estimate (2018-2022)                                                              | SVI                      | 0-3015            | 0                   |
-| E_HH                     | Household estimate (2018-2022)                                                               | SVI                      | 0-2931            | 0                   |
-| E_POV150_P               | Percentage of population below 150% of the poverty line                                         | SVI (ACS Poverty)        | 0-1, 1:100%       | 1 (tract 9801)      |
-| E_UNINSUR_P              | Percentage of uninsured population in total civilian non-institutionalized population (2018-2022) | SVI (ACS Uninsured)      | 0-1, 1:100%       | 1 (tract 9801)      |
-| E_HBURD_P                | Percentage of housing cost-burdened households with income <$75,000                              | SVI (ACS Housing Cost)   | 0-1, 1:100%       | 1 (tract 9801)      |
-| E_SNGPNT_P               | Percentage of single-parent households with children under 18                                     | SVI                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| E_MUNIT_P                | Percentage of housing in structures with 10+ units                                               | SVI                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| E_MOBILE_P               | Percentage of mobile homes                                                                        | SVI                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| E_CROWD_P                | Percentage of overcrowded households                                                             | SVI                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| E_NOVEH_P                | Percentage of households with no vehicle available                                               | SVI                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| E_GROUPQ_P               | Percentage of persons living in group quarters                                                   | SVI                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| SVI_statewide            | Statewide SVI score                                                                              | SVI                      | 0-1, 1:Most vulnerable | 1 (tract 9801)   |
-| House_Vacant_P           | Percentage of vacant housing units                                                               | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| With_Medicaid_P          | Percentage of population covered by Medicaid                                                     | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| Work_Drivealone_P        | Percentage of people driving alone to work                                                       | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| Work_Carpooled_P         | Percentage of people carpooling to work                                                          | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| Work_PublicTransportation_P | Percentage of people using public transportation to work                                       | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| Work_Walk_P              | Percentage of people walking to work                                                             | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| Work_Taximotorbike_P     | Percentage of people using taxi, motorbike, or bicycle to work                                   | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| Work_Fromhome_P          | Percentage of people working from home                                                          | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| With_PublicAssIncome_P   | Percentage of population receiving public assistance or SNAP                                     | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| With_SSI_P               | Percentage of population receiving Supplemental Security Income (SSI)                            | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| Mean_Transportation_time(min) | Average time to commute to work (in minutes)                                               | ACS                      | 0-100 (max: 100)  | 1 (tract 9801)      |
-| Mean_Proportion_HHIncome | Average proportion of household income spent on housing costs                                    | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| Owner_occupied_P         | Percentage of population in owner-occupied housing units                                         | ACS                      | 0-1, 1:100%       | 1 (tract 9801)      |
-| EMS_Calls        | Number of EMS Calls from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Fire_Calls        | Number of Fire Calls from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Structure_Fires     | Number of Calls about Structure Fire from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Stroke_Calls        | Number of Calls about Strokes from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Cardiac_Calls        | Number of Calls about Cardiac Illnesses from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Diabetic_Calls        | Number of Calls about Diabetes from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| CPR_Calls        | Number of Calls about CPR (cardiopulmonary resuscitation) from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Shootings        | Number of Calls about Shootings from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Stabbings        | Number of Calls about Stabbings from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Opioid_Calls        | Number of Calls about Opioid from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Auto_Accidents        | Number of Calls about Auto Accidents from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Total_Calls        | Number of total Calls from 2022 to 2024                                        | Fire&EMS Department                      |        |     |
-| Percent_Fatal_Injury        | Percentage of Fatal Injury Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Severe_Injury        | Percentage of Severe Injury Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Visible_Injury        | Percentage of Visible Injury Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Nonvisible_Injury        | Percentage of Nonvisible Injury Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Avg_Kill_Person        | Average Number of Killed Person by Crash Number Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Avg_Kill_Pedestrian        | Average Number of Killed Pedestrian by Crash Number from 2021 to 2024                                        | VDOT                      |        |     |
-| Avg_Injured_Person        | Average Number of Injured Person by Crash Number Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Avg_Injured_Pedestrian        | Average Number of Injured Pedestrian by Crash Number Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Workzone_Related        | Percentage of Work Zone-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Schoolzone_Related        | Percentage of School Zone-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Alcohol_Related        | Percentage of Alcohol-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Animal_Related        | Percentage of Animal-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Unrestrained_Related        | Percentage of Unrestrained-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Bike_Related        | Percentage of Bike-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Distracted_Related        | Percentage of Distracted-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Drowsy_Related        | Percentage of Drowsy-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Drug_Related        | Percentage of Drug-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Guardrail_Related        | Percentage of Guardrail-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Hitrun_Related        | Percentage of Hitrun-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Lgtruck_Related        | Percentage of Large Truck-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Motorcycle_Related        | Percentage of Motorcycle-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Pedestrian_Related        | Percentage of Pedestrian-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Speed_Related        | Percentage of Speed-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Senior_Related        | Percentage of Senior People-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Young_Related        | Percentage of Young People-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Mainline_Related        | Percentage of Main Line-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Night_Related        | Percentage of Night-related Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Percent_Urban_Crash        | Percentage of Urban Crashs Happened from 2021 to 2024                                        | VDOT                      |        |     |
-| Total_Population        | Total Population                        | ACS                      |        |     |
-| Median_Age        | Median Age                        | ACS                      |        |     |
-| Sex_Ratio(males per 100 females)        | Sex Ratio(males per 100 females)                        | ACS                      |        |     |
-| Age_Dependency_Ratio        | Age Dependency Ratio                        | ACS                      |        |     |
-| Old-age_Dependency_Ratio        | Old-age Dependency Ratio                        | ACS                      |        |     |
-| Child_Dependency_Ratio        | Child Dependency Ratio                        | ACS                      |        |     |
-| Num_School        | Number of Schools                        | Virginia Open Data Portal                      |        |     |
-| Num_Fire_Station        | Number of Fire Stations                  | Virginia Open Data Portal                        |        |     |
-| Num_Library        | Number of Libraries                        | Virginia Open Data Portal                      |        |     |
-| Num_Hospital        | Number of Hospitals                        | Virginia Open Data Portal                      |        |     |
-| Num_Worship        | Number of Places of Worship                        | Virginia Open Data Portal                      |        |     |
-| Num_Shopping_Center        | Number of Shopping Centers                        | Virginia Open Data Portal                      |        |     |
-| Prop_Hisp        | Proportion of Hispanic or Latino                        | ACS                      |        |     |
-| Prop_White        | Proportion of White Alone                        | ACS                      |        |     |
-| Prop_Black        | Proportion of Black or African American alone                        | ACS                      |        |     |
-| Prop_American_Native        | Proportion of American Indian and Alaska Native alone                       | ACS                      |        |     |
-| Prop_Asian        | Proportion of Asian alone                       | ACS                      |        |     |
-| Prop_Hawaiian        | Proportion of Native Hawaiian and Other Pacific Islander alone                      | ACS                      |        |     |
-| Prop_Onemorerace        | Proportion of People with More than One Race                        | ACS                      |        |     |
-
-
-This document provides detailed information about the variables in the `df_EPA_TBD.csv` dataset, including their names, descriptions, data sources, scales, and missing values. These variables are derived from block-level datasets (EPA Smart Location) and include **83** unique tract IDs.
-
-| **Variable Name** | **Description**                                                                                     | **Data Source**            | **Scale**         | **Missing Values** |
-|-------------------|-----------------------------------------------------------------------------------------------------|----------------------------|-------------------|---------------------|
-| Ac_Total          | Total geometric area (acres) of the CBG                                                            | Sum from block level (EPA Smart Location) | 224-21000       | 0                   |
-| Ac_Water          | Total water area (acres)                                                                           | Sum from block level (EPA Smart Location) | 0-1882          | 0                   |
-| Ac_Land           | Total land area (acres)                                                                            | Sum from block level (EPA Smart Location) | 224-21000       | 0                   |
-| Ac_Unpr           | Total land area (acres) not protected from development (e.g., parks, natural areas)                | Sum from block level (EPA Smart Location) | 224-19400       | 0                   |
-| D1A               | Gross residential density (housing units/acre) on unprotected land                                 | Sum from block level (EPA Smart Location) | 0-28            | 0                   |
-| D1B               | Gross population density (people/acre) on unprotected land                                         | Sum from block level (EPA Smart Location) | 0-79            | 0                   |
-| D1C               | Gross employment density (jobs/acre) on unprotected land                                           | Sum from block level (EPA Smart Location) | 0-22            | 0                   |
-| D1D               | Gross activity density (employment + housing units/acre) on unprotected land                       | Sum from block level (EPA Smart Location) | 0-44            | 0                   |
-| D2A_JPHH          | Jobs per household                                                                                 | Average from block level (EPA Smart Location) | 0-9         | 0                   |
-| D3A               | Total road network density                                                                         | Sum from block level (EPA Smart Location) | 2-105           | 0                   |
-| D3B               | Street intersection density (weighted, excluding auto-oriented intersections)                      | Sum from block level (EPA Smart Location) | 2-397           | 0                   |
-| D4A               | Distance from population-weighted centroid to nearest transit stop (meters)                        | Average from block level (EPA Smart Location) | 84-1136      | 34                  |
-| D4C               | Aggregate frequency of transit service within 0.25 miles of CBG boundary per hour during peak time | Average from block level (EPA Smart Location) | 0-18         | 15                  |
-| D4D               | Aggregate frequency of transit service per square mile                                             | Average from block level (EPA Smart Location) | 0-51         | 15                  |
-| D4E               | Aggregate frequency of transit service per capita                                                  | Average from block level (EPA Smart Location) | 0.0001-0.007  | 15                  |
-| NatWalkInd        | Walkability Index                                                                                  | Average from block level (EPA Smart Location) | 4-17          | 0                   |
+| Variable Name                   | Description                                                   | Data Source          | Category               |
+|---------------------------------|---------------------------------------------------------------|----------------------|------------------------|
+| DISABILITYPCT                   | Percentage of persons with disabilities                       | ACS                  | Demographics           |
+| UNDER5PCT                       | Percentage of population under age 5                          | ACS                  | Demographics           |
+| OVER64PCT                       | Percentage of population over age 64                          | ACS                  | Demographics           |
+| E_SNGPNT_P                      | Percentage of single-parent households with children under 18 | ACS                  | Demographics           |
+| E_GROUPQ_P                      | Percentage of persons living in group quarters                | ACS                  | Demographics           |
+| Total_Population                | Total Population                                              | ACS                  | Demographics           |
+| Median_Age                      | Median Age                                                    | ACS                  | Demographics           |
+| Age_Dependency_Ratio            | Ratio of dependents (under 18 or over 64) to working-age pop. | ACS                  | Demographics           |
+| Old-age_Dependency_Ratio        | Ratio of persons over 64 to working-age pop.                  | ACS                  | Demographics           |
+| Child_Dependency_Ratio          | Ratio of persons under 18 to working-age pop.                 | ACS                  | Demographics           |
+| Prop_Race_Color                 | Percentage of people of color (non-white)                     | ACS                  | Demographics           |
+| Sex_Ratio(males per 100 females)| Ratio of males per 100 females                                | ACS                  | Demographics           |
+| LOWINCPCT                       | Percentage of people with low income                          | ACS                  | Socioeconomic          |
+| UNEMPPCT                        | Percentage of unemployed people                               | ACS                  | Socioeconomic          |
+| LINGISOPCT                      | Percentage of population with limited English proficiency   | ACS                  | Socioeconomic          |
+| LESSHSPCT                       | Percentage of population with less than high school education | ACS                  | Socioeconomic          |
+| E_POV150_P                      | Percentage of population below 150% of poverty level        | ACS                  | Socioeconomic          |
+| With_PublicAssIncome_P          | Percentage of households with public assistance income        | ACS                  | Socioeconomic          |
+| With_SSI_P                      | Percentage of households with Supplemental Security Income    | ACS                  | Socioeconomic          |
+| E_UNINSUR_P                     | Percentage of uninsured population                            | ACS                  | Socioeconomic          |
+| With_Medicaid_P                 | Percentage of population with Medicaid coverage               | ACS                  | Socioeconomic          |
+| PRE1960PCT                      | Percentage of housing built before 1960                       | ACS                  | Housing                |
+| E_HBURD_P                       | Percentage of households with a housing cost burden         | ACS                  | Housing                |
+| House_Vacant_P                  | Percentage of vacant housing units                            | ACS                  | Housing                |
+| E_MUNIT_P                       | Percentage of multi-unit housing structures                   | ACS                  | Housing                |
+| E_MOBILE_P                      | Percentage of mobile homes                                    | ACS                  | Housing                |
+| E_CROWD_P                       | Percentage of crowded housing units                           | ACS                  | Housing                |
+| Owner_occupied_P                | Percentage of owner-occupied housing units                    | ACS                  | Housing                |
+| Mean_Proportion_HHIncome        | Housing cost as a percentage of household income (Mean)       | ACS                  | Housing                |
+| PTRAF                           | Traffic Volume                                                | EJScreen         | Transportation         |
+| E_NOVEH_P                       | Percentage of households with no vehicle available            | ACS                  | Transportation         |
+| Mean_Transportation_time(min)   | Average transportation time in minutes                        | ACS                  | Transportation         |
+| Work_Drivealone_P               | Percentage of workers who drive alone                         | ACS                  | Transportation         |
+| Work_Carpooled_P                | Percentage of workers who carpooled                           | ACS                  | Transportation         |
+| Work_PublicTransportation_P     | Percentage of workers using public transportation           | ACS                  | Transportation         |
+| Work_Walk_P                     | Percentage of workers who walk                                | ACS                  | Transportation         |
+| Work_Taximotorbike_P            | Percentage of workers using taxi or motorbike                 | ACS                  | Transportation         |
+| Work_Fromhome_P                 | Percentage of workers who work from home                      | ACS                  | Transportation         |
+| Percent_Fatal_Injury            | Percentage of crashes with fatal injuries                     | VDOT Data           | Transportation Safety  |
+| Percent_Severe_Injury           | Percentage of crashes with severe injuries                    | VDOT Data           | Transportation Safety  |
+| Percent_Visible_Injury          | Percentage of crashes with visible injuries                   | VDOT Data           | Transportation Safety  |
+| Percent_Nonvisible_Injury       | Percentage of crashes with non-visible injuries               | VDOT Data           | Transportation Safety  |
+| Avg_Kill_Person                 | Average number of persons killed per crash                    | VDOT Data           | Transportation Safety  |
+| Avg_Kill_Pedestrian             | Average number of pedestrians killed per crash                | VDOT Data           | Transportation Safety  |
+| Avg_Injured_Person              | Average number of persons injured per crash                   | VDOT Data           | Transportation Safety  |
+| Avg_Injured_Pedestrian          | Average number of pedestrians injured per crash               | VDOT Data           | Transportation Safety  |
+| Percent_Alcohol_Related         | Percentage of crashes related to alcohol                    | VDOT Data           | Transportation Safety  |
+| Percent_Distracted_Related      | Percentage of crashes related to distracted driving         | VDOT Data           | Transportation Safety  |
+| Percent_Drowsy_Related          | Percentage of crashes related to drowsy driving             | VDOT Data           | Transportation Safety  |
+| Percent_Drug_Related            | Percentage of crashes related to drug use                     | VDOT Data           | Transportation Safety  |
+| Percent_Speed_Related           | Percentage of crashes related to speeding                     | VDOT Data           | Transportation Safety  |
+| Percent_Hitrun_Related          | Percentage of hit and run crashes                             | VDOT Data           | Transportation Safety  |
+| Percent_Pedestrian_Related      | Percentage of crashes involving pedestrians                   | VDOT Data           | Transportation Safety  |
+| Percent_Schoolzone_Related      | Percentage of crashes in school zones                         | VDOT Data           | Transportation Safety  |
+| Percent_Lgtruck_Related         | Percentage of crashes involving large trucks                  | VDOT Data           | Transportation Safety  |
+| Percent_Young_Related           | Percentage of crashes involving young drivers                 | VDOT Data           | Transportation Safety  |
+| Percent_Senior_Related          | Percentage of crashes involving senior drivers                | VDOT Data           | Transportation Safety  |
+| Percent_Bike_Related            | Percentage of crashes involving bicycles                      | VDOT Data           | Transportation Safety  |
+| Percent_Night_Related           | Percentage of crashes occurring at night                      | VDOT Data           | Transportation Safety  |
+| Percent_Workzone_Related        | Percentage of crashes in work zones                           | VDOT Data           | Transportation Safety  |
+| PM25                            | Fine Particulate Matter (PM2.5) concentration                 | EJScreen Data   | Environmental          |
+| OZONE                           | Ozone concentration                                           | EJScreen Data   | Environmental          |
+| DSLPM                           | Diesel Particulate Matter concentration                       | EJScreen Data   | Environmental          |
+| NO2                             | Nitrogen Dioxide concentration                                | EJScreen Data   | Environmental          |
+| RSEI_AIR                        | Risk-Screening Environmental Indicators (RSEI) Air Toxics     | EJScreen Data   | Environmental          |
+| PTSDF                           | Number of Treatment, Storage, and Disposal Facilities       | EJScreen Data   | Environmental          |
+| UST                             | Number of Underground Storage Tanks                           | EJScreen Data   | Environmental          |
+| PWDIS                           | Number of permitted Water Discharge Sites                     | EJScreen Data   | Environmental          |
+| PNPL                            | Number of National Priority List (Superfund) Sites            | EJScreen Data   | Environmental          |
+| PRMP                            | Number of Risk Management Plan Facilities                     | EJScreen Data   | Environmental          |
+| LIFEEXPPCT                      | Life Expectancy                                               | EJScreen Data   | Public Health          |
+| EMS_Calls                       | Number of EMS calls                                           | EMS/Fire Data   | Public Health          |
+| Fire_Calls                      | Number of Fire calls                                          | EMS/Fire Data   | Public Health          |
+| Structure_Fires                 | Number of Structure Fires                                     | EMS/Fire Data   | Public Health          |
+| Stroke_Calls                    | Number of Stroke related EMS calls                            | EMS/Fire Data   | Public Health          |
+| Cardiac_Calls                   | Number of Cardiac related EMS calls                           | EMS/Fire Data   | Public Health          |
+| Diabetic_Calls                  | Number of Diabetic related EMS calls                          | EMS/Fire Data   | Public Health          |
+| CPR_Calls                       | Number of CPR related EMS calls                               | EMS/Fire Data   | Public Health          |
+| Shootings                       | Number of Shooting incidents                                  | EMS/Fire Data   | Public Health          |
+| Stabbings                       | Number of Stabbing incidents                                  | EMS/Fire Data   | Public Health          |
+| Opioid_Calls                    | Number of Opioid related calls                                | EMS/Fire Data   | Public Health          |
+| Auto_Accidents                  | Number of Auto Accident related calls                         | EMS/Fire Data   | Public Health          |
+| High_Volume_Utilizer_Calls      | Number of calls from High-Volume 911 Utilizers              | EMS/Fire Data   | Public Health          |
+| Unique_HVU_Callers              | Number of Unique High-Volume 911 Utilizers                  | EMS/Fire Data   | Public Health          |
+| Calls_Per_HVU_Caller            | Average calls per High-Volume 911 Utilizer                    | EMS/Fire Data   | Public Health          |
+| High_Volume_Utilizer_Percent    | Percentage of population who are High-Volume 911 Utilizers  | EMS/Fire Data  | Public Health          |
+| Num_School                      | Number of Schools                                             | Local/GIS Data       | Protective Infrastructure       |
+| Num_Fire_Station                | Number of Fire Stations                                       | Local/GIS Data       | Protective Infrastructure       |
+| Num_Library                     | Number of Libraries                                           | Local/GIS Data       | Protective Infrastructure       |
+| Num_Hospital                    | Number of Hospitals                                           | Local/GIS Data       | Protective Infrastructure       |
+| Num_UrgentCare                  | Number of Urgent Care centers                                 | Local/GIS Data       | Protective Infrastructure       |
+| Num_Worship                     | Number of Places of Worship                                   | Local/GIS Data       | Protective Infrastructure       |
+| Num_Shopping_Center             | Number of Shopping Centers                                    | Local/GIS Data       | Protective Infrastructure       |    |
 
 
 ## Data Transformation Methods
