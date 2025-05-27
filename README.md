@@ -41,37 +41,37 @@ This document provides detailed information about the variables in the `NSI_0424
 | E_CROWD_P                       | Percentage of crowded housing units                           | ACS                  | Housing                |
 | Owner_occupied_P                | Percentage of owner-occupied housing units                    | ACS                  | Housing                |
 | Mean_Proportion_HHIncome        | Housing cost as a percentage of household income (Mean)       | ACS                  | Housing                |
-| PTRAF                           | Traffic Volume                                                | EJScreen         | Transportation         |
-| E_NOVEH_P                       | Percentage of households with no vehicle available            | ACS                  | Transportation         |
-| Mean_Transportation_time(min)   | Average transportation time in minutes                        | ACS                  | Transportation         |
-| Work_Drivealone_P               | Percentage of workers who drive alone                         | ACS                  | Transportation         |
-| Work_Carpooled_P                | Percentage of workers who carpooled                           | ACS                  | Transportation         |
-| Work_PublicTransportation_P     | Percentage of workers using public transportation           | ACS                  | Transportation         |
-| Work_Walk_P                     | Percentage of workers who walk                                | ACS                  | Transportation         |
-| Work_Taximotorbike_P            | Percentage of workers using taxi or motorbike                 | ACS                  | Transportation         |
-| Work_Fromhome_P                 | Percentage of workers who work from home                      | ACS                  | Transportation         |
-| Percent_Fatal_Injury            | Percentage of crashes with fatal injuries                     | VDOT Data           | Transportation Safety  |
-| Percent_Severe_Injury           | Percentage of crashes with severe injuries                    | VDOT Data           | Transportation Safety  |
-| Percent_Visible_Injury          | Percentage of crashes with visible injuries                   | VDOT Data           | Transportation Safety  |
-| Percent_Nonvisible_Injury       | Percentage of crashes with non-visible injuries               | VDOT Data           | Transportation Safety  |
-| Avg_Kill_Person                 | Average number of persons killed per crash                    | VDOT Data           | Transportation Safety  |
-| Avg_Kill_Pedestrian             | Average number of pedestrians killed per crash                | VDOT Data           | Transportation Safety  |
-| Avg_Injured_Person              | Average number of persons injured per crash                   | VDOT Data           | Transportation Safety  |
-| Avg_Injured_Pedestrian          | Average number of pedestrians injured per crash               | VDOT Data           | Transportation Safety  |
-| Percent_Alcohol_Related         | Percentage of crashes related to alcohol                    | VDOT Data           | Transportation Safety  |
-| Percent_Distracted_Related      | Percentage of crashes related to distracted driving         | VDOT Data           | Transportation Safety  |
-| Percent_Drowsy_Related          | Percentage of crashes related to drowsy driving             | VDOT Data           | Transportation Safety  |
-| Percent_Drug_Related            | Percentage of crashes related to drug use                     | VDOT Data           | Transportation Safety  |
-| Percent_Speed_Related           | Percentage of crashes related to speeding                     | VDOT Data           | Transportation Safety  |
-| Percent_Hitrun_Related          | Percentage of hit and run crashes                             | VDOT Data           | Transportation Safety  |
-| Percent_Pedestrian_Related      | Percentage of crashes involving pedestrians                   | VDOT Data           | Transportation Safety  |
-| Percent_Schoolzone_Related      | Percentage of crashes in school zones                         | VDOT Data           | Transportation Safety  |
-| Percent_Lgtruck_Related         | Percentage of crashes involving large trucks                  | VDOT Data           | Transportation Safety  |
-| Percent_Young_Related           | Percentage of crashes involving young drivers                 | VDOT Data           | Transportation Safety  |
-| Percent_Senior_Related          | Percentage of crashes involving senior drivers                | VDOT Data           | Transportation Safety  |
-| Percent_Bike_Related            | Percentage of crashes involving bicycles                      | VDOT Data           | Transportation Safety  |
-| Percent_Night_Related           | Percentage of crashes occurring at night                      | VDOT Data           | Transportation Safety  |
-| Percent_Workzone_Related        | Percentage of crashes in work zones                           | VDOT Data           | Transportation Safety  |
+| PTRAF                           | Traffic Volume                                                | EJScreen         | Mobility         |
+| E_NOVEH_P                       | Percentage of households with no vehicle available            | ACS                  | Mobility         |
+| Mean_Transportation_time(min)   | Average transportation time in minutes                        | ACS                  | Mobility         |
+| Work_Drivealone_P               | Percentage of workers who drive alone                         | ACS                  | Mobility         |
+| Work_Carpooled_P                | Percentage of workers who carpooled                           | ACS                  | Mobility         |
+| Work_PublicTransportation_P     | Percentage of workers using public transportation           | ACS                  | Mobility         |
+| Work_Walk_P                     | Percentage of workers who walk                                | ACS                  | Mobility         |
+| Work_Taximotorbike_P            | Percentage of workers using taxi or motorbike                 | ACS                  | Mobility         |
+| Work_Fromhome_P                 | Percentage of workers who work from home                      | ACS                  | Mobility         |
+| Percent_Fatal_Injury            | Percentage of crashes with fatal injuries                     | VDOT Data           | Transportation Risk  |
+| Percent_Severe_Injury           | Percentage of crashes with severe injuries                    | VDOT Data           | Transportation Risk  |
+| Percent_Visible_Injury          | Percentage of crashes with visible injuries                   | VDOT Data           | Transportation Risk  |
+| Percent_Nonvisible_Injury       | Percentage of crashes with non-visible injuries               | VDOT Data           | Transportation Risk  |
+| Avg_Kill_Person                 | Average number of persons killed per crash                    | VDOT Data           | Transportation Risk  |
+| Avg_Kill_Pedestrian             | Average number of pedestrians killed per crash                | VDOT Data           | Transportation Risk  |
+| Avg_Injured_Person              | Average number of persons injured per crash                   | VDOT Data           | Transportation Risk  |
+| Avg_Injured_Pedestrian          | Average number of pedestrians injured per crash               | VDOT Data           | Transportation Risk  |
+| Percent_Alcohol_Related         | Percentage of crashes related to alcohol                    | VDOT Data           | Transportation Risk  |
+| Percent_Distracted_Related      | Percentage of crashes related to distracted driving         | VDOT Data           | Transportation Risk  |
+| Percent_Drowsy_Related          | Percentage of crashes related to drowsy driving             | VDOT Data           | Transportation Risk  |
+| Percent_Drug_Related            | Percentage of crashes related to drug use                     | VDOT Data           | Transportation Risk  |
+| Percent_Speed_Related           | Percentage of crashes related to speeding                     | VDOT Data           | Transportation Risk  |
+| Percent_Hitrun_Related          | Percentage of hit and run crashes                             | VDOT Data           | Transportation Risk  |
+| Percent_Pedestrian_Related      | Percentage of crashes involving pedestrians                   | VDOT Data           | Transportation Risk  |
+| Percent_Schoolzone_Related      | Percentage of crashes in school zones                         | VDOT Data           | Transportation Risk  |
+| Percent_Lgtruck_Related         | Percentage of crashes involving large trucks                  | VDOT Data           | Transportation Risk  |
+| Percent_Young_Related           | Percentage of crashes involving young drivers                 | VDOT Data           | Transportation Risk  |
+| Percent_Senior_Related          | Percentage of crashes involving senior drivers                | VDOT Data           | Transportation Risk  |
+| Percent_Bike_Related            | Percentage of crashes involving bicycles                      | VDOT Data           | Transportation Risk  |
+| Percent_Night_Related           | Percentage of crashes occurring at night                      | VDOT Data           | Transportation Risk  |
+| Percent_Workzone_Related        | Percentage of crashes in work zones                           | VDOT Data           | Transportation Risk  |
 | PM25                            | Fine Particulate Matter (PM2.5) concentration                 | EJScreen Data   | Environmental          |
 | OZONE                           | Ozone concentration                                           | EJScreen Data   | Environmental          |
 | DSLPM                           | Diesel Particulate Matter concentration                       | EJScreen Data   | Environmental          |
