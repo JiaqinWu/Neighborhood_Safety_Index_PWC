@@ -9,6 +9,7 @@ This document provides detailed information about the variables in the `NSI_0424
 
 | Variable Name                   | Description                                                   | Data Source          | Category               |
 |---------------------------------|---------------------------------------------------------------|----------------------|------------------------|
+| total_population                   | Total Population                       | ACS                  | Demographics           |
 | DISABILITYPCT                   | Percentage of persons with disabilities                       | ACS                  | Demographics           |
 | UNDER5PCT                       | Percentage of population under age 5                          | ACS                  | Demographics           |
 | OVER64PCT                       | Percentage of population over age 64                          | ACS                  | Demographics           |
@@ -21,6 +22,7 @@ This document provides detailed information about the variables in the `NSI_0424
 | Child_Dependency_Ratio          | Ratio of persons under 18 to working-age pop.                 | ACS                  | Demographics           |
 | Prop_Race_Color                 | Percentage of people of color (non-white)                     | ACS                  | Demographics           |
 | Sex_Ratio(males per 100 females)| Ratio of males per 100 females                                | ACS                  | Demographics           |
+| percent_food_insecure                       | Percentage of people with food insecurity                         | ACS                  | Socioeconomic          |
 | LOWINCPCT                       | Percentage of people with low income                          | ACS                  | Socioeconomic          |
 | UNEMPPCT                        | Percentage of unemployed people                               | ACS                  | Socioeconomic          |
 | LINGISOPCT                      | Percentage of population with limited English proficiency   | ACS                  | Socioeconomic          |
@@ -30,6 +32,7 @@ This document provides detailed information about the variables in the `NSI_0424
 | With_SSI_P                      | Percentage of households with Supplemental Security Income    | ACS                  | Socioeconomic          |
 | E_UNINSUR_P                     | Percentage of uninsured population                            | ACS                  | Socioeconomic          |
 | With_Medicaid_P                 | Percentage of population with Medicaid coverage               | ACS                  | Socioeconomic          |
+| percent_homeowners                       | Percentage of homeowners                         | ACS                  | Housing          |
 | PRE1960PCT                      | Percentage of housing built before 1960                       | ACS                  | Housing                |
 | E_HBURD_P                       | Percentage of households with a housing cost burden         | ACS                  | Housing                |
 | House_Vacant_P                  | Percentage of vacant housing units                            | ACS                  | Housing                |
@@ -94,14 +97,22 @@ This document provides detailed information about the variables in the `NSI_0424
 | High_Volume_Utilizer_Calls      | Number of calls from High-Volume 911 Utilizers              | EMS/Fire Data   | Public Health          |
 | Unique_HVU_Callers              | Number of Unique High-Volume 911 Utilizers                  | EMS/Fire Data   | Public Health          |
 | Calls_Per_HVU_Caller            | Average calls per High-Volume 911 Utilizer                    | EMS/Fire Data   | Public Health          |
-| High_Volume_Utilizer_Percent    | Percentage of population who are High-Volume 911 Utilizers  | EMS/Fire Data  | Public Health          |
+| Domestic    | Number of Domestic Calls  | EMS/Fire Data  | Public Health          |
+| Homeless    | Number of Calls related to Homelessness | EMS/Fire Data  | Public Health          |
+| SFPC       | Number of Code Violations related to State Fire Protection Code | Internal Agency  | Public Health          |
+| VMC    | Number of Code Violations related to Virginia Maintenance Code | Internal Agency  | Public Health          |
+| Vegetation Ordinance    | Number of Code Violations related to Vegetation Ordinance  | Internal Agency  | Public Health          |
 | Num_School                      | Number of Schools                                             | Local/GIS Data       | Protective Infrastructure       |
 | Num_Fire_Station                | Number of Fire Stations                                       | Local/GIS Data       | Protective Infrastructure       |
 | Num_Library                     | Number of Libraries                                           | Local/GIS Data       | Protective Infrastructure       |
 | Num_Hospital                    | Number of Hospitals                                           | Local/GIS Data       | Protective Infrastructure       |
 | Num_UrgentCare                  | Number of Urgent Care centers                                 | Local/GIS Data       | Protective Infrastructure       |
 | Num_Worship                     | Number of Places of Worship                                   | Local/GIS Data       | Protective Infrastructure       |
-| Num_Shopping_Center             | Number of Shopping Centers                                    | Local/GIS Data       | Protective Infrastructure       |    |
+| Num_Shopping_Center             | Number of Shopping Centers                                    | Local/GIS Data       | Protective Infrastructure       |  
+|1st Due | 1st Due is the location of each individual fire station and where their apparatus is housed | Local/GIS Data |  Location  | 
+|District | District | Local/GIS Data |  Location  | 
+|City | City | Local/GIS Data |  Location  | 
+|Neighborhood | Neighborhood | Local/GIS Data |  Location  | 
 
 
 ## Data Transformation Methods
