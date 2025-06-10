@@ -32,6 +32,7 @@ This document provides detailed information about the variables in the `NSI_0424
 | With_SSI_P                      | Percentage of households with Supplemental Security Income    | ACS                  | Socioeconomic          |
 | E_UNINSUR_P                     | Percentage of uninsured population                            | ACS                  | Socioeconomic          |
 | With_Medicaid_P                 | Percentage of population with Medicaid coverage               | ACS                  | Socioeconomic          |
+| LIFEEXPPCT                      | % of Low Life Expectancy                                        | EJScreen Data   | Socioeconomic         |
 | percent_homeowners                       | Percentage of homeowners                         | ACS                  | Housing          |
 | PRE1960PCT                      | Percentage of housing built before 1960                       | ACS                  | Housing                |
 | E_HBURD_P                       | Percentage of households with a housing cost burden         | ACS                  | Housing                |
@@ -82,7 +83,6 @@ This document provides detailed information about the variables in the `NSI_0424
 | PWDIS                           | Number of permitted Water Discharge Sites                     | EJScreen Data   | Environmental          |
 | PNPL                            | Number of National Priority List (Superfund) Sites            | EJScreen Data   | Environmental          |
 | PRMP                            | Number of Risk Management Plan Facilities                     | EJScreen Data   | Environmental          |
-| LIFEEXPPCT                      | Life Expectancy                                               | EJScreen Data   | Public Health          |
 | EMS_Calls                       | Number of EMS calls                                           | EMS/Fire Data   | Public Health          |
 | Fire_Calls                      | Number of Fire calls                                          | EMS/Fire Data   | Public Health          |
 | Structure_Fires                 | Number of Structure Fires                                     | EMS/Fire Data   | Public Health          |
